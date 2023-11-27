@@ -1,0 +1,30 @@
+<!-- editar_tarea.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="center" style="padding-top: 1em;">Editar Tarea</h1>
+
+<form id="edit_task_form" class="mb-3" name="edit_task_form" action="/edit_task/{{ task._id }}" method="post">
+    <div class="mb-3">
+        <p><strong>Nombre</strong></p>
+        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ task.nombre }}" required>
+    </div>
+    <div class="mb-3">
+        <p><strong>Descripción</strong></p>
+        <textarea class="form-control" id="detalles" name="detalles" required>{{ task.detalles }}</textarea>
+    </div>
+    <div class="mb-3">
+        <p><strong>Fecha de Vencimiento</strong></p>
+        <input type="date" class="form-control" id="fecha_entrega" name="fecha_entrega" value="{{ task.fecha_entrega }}"
+            required>
+    </div>
+    <p class="error error--hidden">No se pudo editar la tarea</p>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary my-2 my-sm-0" value="Guardar">
+    </div>
+</form>
+
+<a class="btn btn-secondary my-2 my-sm-0" style="margin: 1em;" href="/dashboard">Volver al Dashboard</a>
+
+{% endblock %}

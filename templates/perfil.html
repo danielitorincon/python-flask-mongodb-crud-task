@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/dashboard">Gestor de Tareas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/dashboard">Mis tareas
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/perfil">Mi Perfil</a>
+                </li>
+            </ul>
+
+            <form class="d-flex">
+                <a class="btn btn-secondary my-2 my-sm-0" style="margin: 1em;" href="/user/signout">Cerrar Sesion</a>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<h1 class="center" style="padding-top: 1em;">Mi Perfil</h1>
+
+
+<div class="card-wrapper">
+  
+    <div class="card">
+        <h2 class="center">Datos Personales</h2>
+        <p>
+            <strong>ID: </strong> {{session['user']['_id'] }} <br>
+            <strong>Nombre: </strong> {{session['user']['name'] }} <br>
+            <strong>Email: </strong> {{session['user']['email'] }} <br>
+
+        </p>
+        <a class="btn btn-secondary my-2 my-sm-0" style="margin: 1em;" href="/dashboard/">Mis Tareas</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/dashboard">Gestor de Tareas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="/dashboard">Mis tareas
+                    <span class="visually-hidden">(current)</span>
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="/perfil">Mi Perfil</a>
+            </li>
+        </ul>
+            <form class="d-flex">
+                <a class="btn btn-secondary my-2 my-sm-0" style="margin: 1em;" href="/register">Register</a>
+            
+            </form>
+            <form class="d-flex">
+            
+                <a class="btn btn-secondary my-2 my-sm-0" style="margin: 1em;" href="/">Login</a>
+            </form>
+        </div>
+    </div>
+</nav>
+
+   <div class="card-wrapper" >
+    <div class="card">
+        <h1 class="center">Registrarse</h1>
+        <form name="signup_form">
+            <p><strong>Name</strong></p>
+            <input type="text" name="name" class="field" required>
+
+        <p><strong>Email</strong></p>
+            <input type="email" name="email" class="field" required>
+
+            <p><strong>Password</strong></p>
+            <input type="password" name="password" class="field" required>
+            
+            <p class="error error--hidden"> No se pudo registrar</p>
+
+            <input type="submit" value="Sign Up" class="btn" style="padding: 0 0 0 0;" >
+        </form>
+
+        <p>Ya estás registrado? <a href="/">Iniciar Sesion</a> </p>
+   
+    </div>
+
+   </div>
+{% endblock %}
